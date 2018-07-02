@@ -1,18 +1,25 @@
-solve_nX_equals_d_mod_p=(n,d,p,D=p,t=0,T=1,_)=>{//doesn't support some zero values or full 2**53 range
-  for(;d;D=t,t=_){
-    _=T
-    T=t-(D/d|0)*T
-    t=d
-    d=D%d
-  }
-  return(_>0?_:_+p)*n%p
-}
-recover_from_p_residues_a=(a,p,n,m=1,i)=>{
-  for(n=a[i=0];++i<p.length;){
-    m*=p[i-1]
-    n+=m*f(p[i]+a[i]-n%p[i],m,p[i])
-  }
-  return n
-}
+// var exports;
+exports = {
+  //doesn't support N = 0
+  solveAXBN: function(a,b,n,f=,B=n,t=0,T=1,_){
+    for(;b;B=t,t=_){
+      _=T
+      T=t-Math.floor(B/b)*T
+      t=b
+      b=B%b
+    }
+    return(_>0?_:_+n)*a%n
+  },
 
-//this isn't GPL'd and doesn't require Node, unlike that OTHER npm lib...
+  fromResidues: function(a,p,n,m=1,i=0){
+    for(n=a[i=0];++i<p.length;){
+      m*=p[i-1]
+      n+=m*f(p[i]+a[i]-n%p[i],m,p[i])
+    }
+    return n
+  },
+
+  test: function(){
+    throw 'NOT IMPLEMENTED';
+  }
+};
