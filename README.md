@@ -1,1 +1,3 @@
 Not ready yet.
+
+This isn't GPL'd and doesn't require Node, unlike that OTHER npm lib...
