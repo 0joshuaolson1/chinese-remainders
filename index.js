@@ -1,7 +1,7 @@
 // var exports;
 exports = {
   //doesn't support N = 0
-  solveAXBN: function(a,b,n,f=,B=n,t=0,T=1,_){
+  solveAXBN: function(a,b,n,f=,B=n,t=0,T=1,_){//f= not finished...
     for(;b;B=t,t=_){
       _=T
       T=t-Math.floor(B/b)*T
