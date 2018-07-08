@@ -29,7 +29,7 @@ exports = {
 
   toResidues: function(n,p/*mod*/){
     return p.map(p=>n%p)
-  }
+  },
 
   test: function(){
     throw 'NOT IMPLEMENTED';
