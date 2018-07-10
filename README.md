@@ -1,3 +1,3 @@
-Not ready yet.
+Not ready yet. It's correct, but ir doesn't yet support bigints or certain (zero) values.
 
 This isn't GPL'd and doesn't require Node, unlike that OTHER npm lib...
