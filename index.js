@@ -6,13 +6,13 @@ exports = {
     divmod=divmod||...
     ...
     */
-    for(b=N,t=0,T=1;B;b=t,t=_){
+    for(a=N,t=0,T=1;A;b=t,t=_){
       _=T;
-      T=t-Math.floor(b/B)*T;
-      t=B;
-      B=b%B;
+      T=t-Math.floor(a/A)*T;
+      t=A;
+      A=a%A;
     }
-    return(_>0?_:_+N)*A%N;
+    return(_>0?_:_+N)*B%N;
   },
 
   fromResidues: function(a,p/*,muladd,divmod,...*/,m,n,i){
