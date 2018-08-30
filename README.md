@@ -1,3 +1,3 @@
-Not quite ready yet, although I think what it has is usable.
+Not quite ready yet.
 
 This isn't GPL'd and doesn't require Node, unlike that OTHER npm lib...
