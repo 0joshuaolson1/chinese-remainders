@@ -1,18 +1,23 @@
 // var exports;
 exports = {
   // find X where AX = B (mod N); A,B > 0; B < N; modified from Wikipedia
-  solveAXBN: function(A,B,N/*,divmod,...*/,b,T,t,_){
-    /*
-    divmod=divmod||...
-    ...
-    */
-    for(a=N,t=0,T=1;A;b=t,t=_){
+  solveAXBN: function(A,B,N,zero,one,positive,add,subtract,multiply,divmod){
+    zero=zero||0
+    one=one||1
+    positive=positive||function(n){return n>0}
+    add=add||function(a,b){return a+b}
+    subtract=subtract||function(l,r){return l-r}
+    multiply=multiply||function(a,b){return a*b}
+    divmod=divmod||function(n,d){return{div:Math.floor(n/d),mod:n%d}}
+    var a=N,b,T=one,t=zero,_,d
+    for(;positive(A);b=t,t=_){
       _=T;
-      T=t-Math.floor(a/A)*T;
+      d=divmod(a,A)
+      T=subtract(t,mul(d.div,T))
       t=A;
-      A=a%A;
+      A=d.mod
     }
-    return(_>0?_:_+N)*B%N;
+    return divmod(mul(positive(_)?_:add(_,N),B),N).mod
   },
 
   fromResidues: function(a,p/*,muladd,divmod,...*/,m,n,i){
